@@ -10,13 +10,16 @@ const TileContainer = styled.div`
     align-items: center;
 `
 
-export default function tileRow({numColumns}) {
+export default function tileRow({key1, numColumns, setRatingObject, ratingObject}) {
     return (
         <TileContainer>
             {(Array(numColumns).fill().map((_, i) => i + 1)).map((index) => {
                 return (
                     <Tile
-                        key = {index}
+                        key1 = {key1}
+                        key2 = {index}
+                        setRatingObject = {setRatingObject}
+                        ratingObject = {ratingObject}
                     />
                 )
             })}

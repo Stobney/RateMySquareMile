@@ -6,15 +6,17 @@ const TilesContainer = styled.div`
     display: block;
 `
 
-export default function RowsContainer({numRows, numColumns}) {
+export default function RowsContainer({numRows, numColumns, setRatingObject, ratingObject}) {
   return (
     <TilesContainer>
         {(Array(numRows).fill().map((_, i) => i + 1)).map((index) => {
             return (
                 <div id='TileRow'>
                     <TileRow
-                        key = {index}
+                        key1 = {index}
                         numColumns = {numColumns}
+                        setRatingObject = {setRatingObject}
+                        ratingObject = {ratingObject}
                     />
                 </div>
             )

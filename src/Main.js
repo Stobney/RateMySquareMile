@@ -12,14 +12,20 @@ const GrandContainer = styled.div`
 
 export default function Main() {
 
-  const [numRows, setRows] = useState(10);
-  const [numColumns, setColumns] = useState(10);
+  const [ratingObject, setRatingObject] = useState({});
+
+  useEffect(() => {
+    setRatingObject(ratingObject);
+    console.log(JSON.stringify(ratingObject, null, 2));
+  }, [ratingObject])
 
   return (
     <GrandContainer>
       <TilesContainer
-        numRows = {numRows}
-        numColumns = {numColumns}
+        numRows = {10}
+        numColumns = {10}
+        setRatingObject = {setRatingObject}
+        ratingObject = {ratingObject}
       >
       
       </TilesContainer>
